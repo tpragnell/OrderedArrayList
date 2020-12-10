@@ -1,1 +1,2 @@
-
+Summary of discussion...
+We brought up the question of how we were going to create a constructor for this problem. We discussed how the list is filled with null values originally. Possibly we could set the size to zero so that there won't be null values.  
