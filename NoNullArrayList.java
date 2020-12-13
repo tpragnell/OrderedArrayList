@@ -17,9 +17,9 @@ public class NoNullArrayList<T> extends ArrayList<T> {
     if(_value == null)
       throw new IllegalArgumentException();
     T ans = super.get(_index);
-    super.remove(_index);
-    super.add(_index, _value);
+    super.set(_index, _value);
     return ans;
+
   }
 
   public boolean add(T _value) throws IllegalArgumentException{
