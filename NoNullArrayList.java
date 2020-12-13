@@ -6,29 +6,31 @@ public class NoNullArrayList<T> extends ArrayList<T> {
   private ArrayList<T> list;
 
   public NoNullArrayList() {
-    list = new ArrayList<T>(0);
+    new ArrayList<T>(0);
   }
 
   public NoNullArrayList(int _startingCapacity) {
-    list = new ArrayList<T>(_startingCapacity);
+    new ArrayList<T>(_startingCapacity);
   }
 
   public T set(int _index, T _value) throws IllegalArgumentException{
     if(_value == null)
       throw new IllegalArgumentException();
-    list.set(_index, _value);
-    return _value;
+    T ans = super.get(_index);
+    super.remove(_index);
+    super.add(_index, _value);
+    return ans;
   }
 
   public boolean add(T _value) throws IllegalArgumentException{
     if(_value == null)
       throw new IllegalArgumentException();
-    return list.add(_value);
+    return super.add(_value);
   }
 
   public void add(int _index, T _value) throws IllegalArgumentException{
     if(_value == null)
       throw new IllegalArgumentException();
-    list.add(_index, _value);
+    super.add(_index, _value);
   }
 }
