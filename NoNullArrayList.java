@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 import java.lang.IllegalArgumentException;
-;
+
 
 public class NoNullArrayList<T> extends ArrayList<T> {
-  private ArrayList<T> list;
 
   public NoNullArrayList() {
     new ArrayList<T>(0);
